@@ -2467,6 +2467,7 @@ Community Themes, run {Ghost.command_prefix}ctheme (theme name) to download the 
 {Ghost.command_prefix}countdown [number] » Count down from a number.
 {Ghost.command_prefix}countup [number] » Count up from a number.
 {Ghost.command_prefix}pytoexe [path] » Convert a PY file to an executable.
+{Ghost.command_prefix}minesweeper » Sends a minesweeper minigame.
 {Ghost.command_prefix}skin [name] » Gets the skin of a MC user.
 
 # {__embedfooter__}```""", delete_after=__deletetimeout__)
@@ -6944,6 +6945,14 @@ You have risk mode disabled, you cant use this command.
         await ctx.send(f"""
 :game_die: `{amnt}` sides dice
 You rolled a `{result}`.""")
+
+    @Ghost.command(name="minesweeper", description="The classic minesweeper!", usage="minesweeper", aliases=["mswr"])
+    async def minesweeper(ctx):
+        await ctx.send("""|| :boom: || || :two: || || :boom: || || :three: || || :two: ||
+|| :two: || || :four: || || :five: || || :boom: || || :boom: ||
+|| :one: || || :boom: || || :boom: || || :boom: || || :four: ||
+|| :two: || || :three: || || :five: || || :boom: || || :three: ||
+|| :boom: || || :one: || || :two: || || :boom: || || :two: ||""")
 
     @Ghost.command(name="rps", description="Rock, paper, scissors.", usage="rps", aliases=["rockpaperscissors"])
     async def rps(ctx, move = None):
