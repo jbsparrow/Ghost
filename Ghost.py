@@ -6383,7 +6383,7 @@ You have risk mode disabled, you cant use this command.
     async def achievement(ctx, text, icon=10):
         icon = str(icon)
         text = text.replace(" ", "+")
-        image = requests.get(f"http://timbw.ddns.net:5000/achievement?text={text}&icon={icon}")
+        image = requests.get(f"http://api.timbw.xyz:5000/achievement?text={text}&icon={icon}")
         imageFile = open("image.png", "wb").write(image.content)
         file = discord.File("image.png", filename="image.png")
         if __embedmode__:
@@ -6399,7 +6399,7 @@ You have risk mode disabled, you cant use this command.
     @Ghost.command(name="challenge", description="Create a fake minecraft challenge image.", usage='challenge ["text"] (icon)', aliases=["minecraftchallenge", "mcchallenge"])
     async def challenge(ctx, text, icon=33):  
             text = text.replace(" ", "+")
-            image = requests.get(f"http://timbw.ddns.net:5000/challenge?text={text}&icon={icon}")
+            image = requests.get(f"http://api.timbw.xyz:5000/challenge?text={text}&icon={icon}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6416,7 +6416,7 @@ You have risk mode disabled, you cant use this command.
     async def captcha(ctx, *, text):
               
             text = text.replace(" ", "+")
-            image = requests.get(f"http://timbw.ddns.net:5000/captcha?text={text}")
+            image = requests.get(f"http://api.timbw.xyz:5000/captcha?text={text}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6433,7 +6433,7 @@ You have risk mode disabled, you cant use this command.
     async def amiajoke(ctx, user:discord.User):
               
             imageurl = avatarUrl(user.id, user.avatar)
-            image = requests.get(f"http://timbw.ddns.net:5000/amiajoke?image={imageurl}")
+            image = requests.get(f"http://api.timbw.xyz:5000/amiajoke?image={imageurl}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6451,7 +6451,7 @@ You have risk mode disabled, you cant use this command.
               
             text1 = text1.replace(" ", "+")
             text2 = text2.replace(" ", "+")
-            image = requests.get(f"http://timbw.ddns.net:5000/didyoumean?top={text1}&bottom={text2}")
+            image = requests.get(f"http://api.timbw.xyz:5000/didyoumean?top={text1}&bottom={text2}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6469,7 +6469,7 @@ You have risk mode disabled, you cant use this command.
               
             text1 = text1.replace(" ", "+")
             text2 = text2.replace(" ", "+")
-            image = requests.get(f"http://timbw.ddns.net:5000/drake?top={text1}&bottom={text2}")
+            image = requests.get(f"http://api.timbw.xyz:5000/drake?top={text1}&bottom={text2}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6486,7 +6486,7 @@ You have risk mode disabled, you cant use this command.
     async def facts(ctx, *, text):
               
             text = text.replace(" ", "+")
-            image = requests.get(f"http://timbw.ddns.net:5000/facts?text={text}")
+            image = requests.get(f"http://api.timbw.xyz:5000/facts?text={text}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6502,7 +6502,7 @@ You have risk mode disabled, you cant use this command.
     @Ghost.command(name="jokeoverhead", description="Create a joke over head image.", usage="jokeoverhead [image url]")
     async def jokeoverhead(ctx, *, imageurl):
               
-            image = requests.get(f"http://timbw.ddns.net:5000/jokeoverhead?image={imageurl}")
+            image = requests.get(f"http://api.timbw.xyz:5000/jokeoverhead?image={imageurl}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6520,7 +6520,7 @@ You have risk mode disabled, you cant use this command.
               
             text1 = text1.replace(" ", "+")
             text2 = text2.replace(" ", "+")
-            image = requests.get(f"http://timbw.ddns.net:5000/pornhub?text={text1}&text2={text2}")
+            image = requests.get(f"http://api.timbw.xyz:5000/pornhub?text={text1}&text2={text2}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6537,7 +6537,7 @@ You have risk mode disabled, you cant use this command.
     async def jokeoverhead(ctx, user:discord.User):
               
             imageurl = avatarUrl(user.id, user.avatar)
-            image = requests.get(f"http://timbw.ddns.net:5000/salty?image={imageurl}")
+            image = requests.get(f"http://api.timbw.xyz:5000/salty?image={imageurl}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6555,7 +6555,7 @@ You have risk mode disabled, you cant use this command.
               
             user1 = avatarUrl(user1.id, user1.avatar)
             user2 = avatarUrl(user2.id, user2.avatar)
-            image = requests.get(f"http://timbw.ddns.net:5000/ship?user={user1}&user2={user2}")
+            image = requests.get(f"http://api.timbw.xyz:5000/ship?user={user1}&user2={user2}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6573,7 +6573,7 @@ You have risk mode disabled, you cant use this command.
               
             trash = avatarUrl(user.id, user.avatar)
             face = avatarUrl(Ghost.user.id, Ghost.user.avatar)
-            image = requests.get(f"http://timbw.ddns.net:5000/trash?trash={trash}&face={face}")
+            image = requests.get(f"http://api.timbw.xyz:5000/trash?trash={trash}&face={face}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -6589,7 +6589,7 @@ You have risk mode disabled, you cant use this command.
     @Ghost.command(name="what", description="Make a what meme.", usage='what [image url]')
     async def what(ctx, *, imageurl):
               
-            image = requests.get(f"http://timbw.ddns.net:5000/what?image={imageurl}")
+            image = requests.get(f"http://api.timbw.xyz:5000/what?image={imageurl}")
             imageFile = open("image.png", "wb").write(image.content)
             file = discord.File("image.png", filename="image.png")
             if __embedmode__:
@@ -7267,7 +7267,7 @@ Address: {address}
     @Ghost.command(name="zalgo", description="Unleash the zalgo into your message.", usage="zalgo [text]")
     async def zalgo(ctx, *, text):
         text = text.replace(" ", "+")
-        await ctx.send(requests.get(f"http://timbw.ddns.net:5000/zalgo?text={text}").text)
+        await ctx.send(requests.get(f"http://api.timbw.xyz:5000/zalgo?text={text}").text)
 
     @Ghost.command(name="upsidedown", description="Flip your text upsidedown.", usage="upsidedown [text]")
     async def upsidedown(ctx, *, text):
