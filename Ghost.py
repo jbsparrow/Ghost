@@ -7951,17 +7951,6 @@ Nitro: {nitro}
 
     @Ghost.command(name="userinfo", description="Information about the mentioned user.", usage="userinfo [@user]", aliases=["userlookup", "lookupuser"])
     async def userinfo(ctx, *, user: discord.User):
-        if __embedmode__:
-            embed = discord.Embed(title=user.name + " Information", color=__embedcolour__)
-            embed.add_field(name="Username", value="```" + str(user.name) + "```")
-            embed.add_field(name="Discriminator", value="```" + str(user.discriminator) + "```")
-            embed.add_field(name="User ID", value="```" + str(user.id) + "```")
-            embed.add_field(name="Created At", value="```" + str(user.created_at.strftime("%d %B, %Y")) + "```")
-            embed.set_thumbnail(url=avatarUrl(user.id, user.avatar))
-            embed.set_footer(text=__embedfooter__, icon_url=__embedfooterimage__)
-            embed.timestamp = datetime.now()
-            await ctx.send(embed=embed)
-        else:
             createdAt = user.created_at.strftime("%d %B, %Y")
             await ctx.send(f"""```ini
 [ {user.name} Information ]
@@ -7972,7 +7961,8 @@ User ID: {user.id}
 Created At: {createdAt}
 
 
-# {__embedfooter__}```{avatarUrl(user.id, user.avatar)}""")
+# {__embedfooter__}```""")
+            await ctx.send(f"{avatarUrl(user.id, user.avatar)}")
 
     @Ghost.command(name="serverinfo", description="Information about the command server.", usage="serverinfo (guild id)", aliases=["lookupserver", "guildinfo", "lookupguild", "serverlookup", "guildlookup"])
     async def serverinfo(ctx, guild:int=None):
