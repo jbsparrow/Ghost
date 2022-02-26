@@ -6365,7 +6365,7 @@ You have risk mode disabled, you cant use this command.
         else:
             await ctx.send(data[0])                    
 
-    @Ghost.command(name="fox", description="A random fox image. (Thanks Imf44 <3)", usage="fox", aliases=["randomfox", "ranfox"])
+    @Ghost.command(name="fox", description="A random fox image. (Thanks drag#6311 for fixing it :/)", usage="fox", aliases=["randomfox", "ranfox"])
     async def fox(ctx):
         response = requests.get('https://randomfox.ca/floof/')
         data = response.json()
@@ -6376,7 +6376,7 @@ You have risk mode disabled, you cant use this command.
             embed.set_image(url=data['image'])
             await ctx.send(embed=embed)
         else:
-            await ctx.send(data['message'])
+            await ctx.send(data['image'])
 
     @Ghost.command(name="achievement", description="Create a fake minecraft achievement image.", usage='achievement ["text"] (icon)', aliases=["minecraftachievement", "mcachievement"])
     async def achievement(ctx, text, icon=10):
