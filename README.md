@@ -19,3 +19,5 @@ It was developed by [@bentettmar](https://github.com/bentettmar), and now mantai
 > ### Contribution
 > If there is a feature that you want, add it yourself.  
 > Create pull requests with your code and features to the `dev` branch.
+
+<sub>👻 Ghost - Enhancing your Discord experience since 2021.</sub>
