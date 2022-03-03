@@ -18,5 +18,5 @@ Feel free to use any of the code found in this project for your own project but 
 > - Supported OS : Windows, Linux, Mac 
 
 > ### Contribution
-> If there is a feature that you want, add it yourself.
+> If there is a feature that you want, add it yourself.  
 > Create pull requests with your code and features to the `dev` branch.
