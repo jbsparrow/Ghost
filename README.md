@@ -18,5 +18,5 @@ Feel free to use any of the code found in this project for your own project but 
 > - Supported OS : Windows, Linux, Mac 
 
 > ### Contribution
-> If there is a feature that you want in Ghost then dont come to the developers, we are not taking feature requests!  
-> Instead, please create pull requests with your own code and features to the `dev` branch and we will consider adding it.
+> If there is a feature that you want, add it yourself.
+> Create pull requests with your code and features to the `dev` branch.
