@@ -2469,7 +2469,7 @@ Community Themes, run {Ghost.command_prefix}ctheme (theme name) to download the 
 {Ghost.command_prefix}pytoexe [path] » Convert a PY file to an executable.
 {Ghost.command_prefix}minesweeper » Sends a minesweeper minigame.
 {Ghost.command_prefix}skin [name] » Gets the skin of a MC user.
-{Ghost.command_prefix}tts [name] » Sends a TTS audio file with the text you specify.
+{Ghost.command_prefix}tts [text] » Sends a TTS audio file with the text you specify.
 
 # {__embedfooter__}```""", delete_after=__deletetimeout__)
 
