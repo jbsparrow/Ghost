@@ -25,4 +25,3 @@ discord-emoji
 pync
 WMI
 winshell
-winshell
