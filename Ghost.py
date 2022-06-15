@@ -765,6 +765,7 @@ async def example(Ghost):
     __guildleaveignoredservers__ = CONFIG["ignored_servers"]["guildleave"]
 
     nsfwTypes = ["boobs", "ass", "hentai", "porngif", "pussy", "tits", "tittydrop", "tittypop", "titty", "femboy"]
+    typinghistory = {}
     now = datetime.now()
     fake = Faker()
     def getCurrentTime():
@@ -1551,8 +1552,21 @@ async def example(Ghost):
 
     @Ghost.event
     async def on_typing(channel, user, when):
+        global typinghistory
         if __ghostloaded__:
             if isinstance(channel, discord.DMChannel):
+
+                current_time = when
+                userid = int(user.id)
+
+                if userid not in typinghistory:
+                    typinghistory[userid] = current_time
+                    
+                timedif = (current_time - typinghistory[userid]).total_seconds()
+                
+                if timedif >= 120 or timedif == 0:
+                    typinghistory[userid] = current_time
+
                 if Config.getConfig()["detections"]["dmtyping"]:
                     print_detect(f"DM Typing")
                     print_sniper_info("User", user)
@@ -3382,6 +3396,9 @@ There is a total of {len(hiddenChannels)} hidden channels.
         for gpu in GPUtil.getGPUs():
             gpus.append(gpu.name)
 
+        if gpus == []:
+            gpus = "N/A"
+
         if __embedmode__:
             embed = discord.Embed(title="Specifications", color=__embedcolour__)
             embed.add_field(name="System", value=f"```{system}```")
@@ -3400,7 +3417,7 @@ There is a total of {len(hiddenChannels)} hidden channels.
 System: {system}
 Machine: {machine}
 CPU: {cpu}
-GPUs: {', '.join(gpus)}
+GPUs: {', '.join(gpus).replace("N, /, A", "N/A")}
 RAM: {ram}
 
 
